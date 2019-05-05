@@ -18,22 +18,16 @@ class SelectorContainer extends Component {
 
   render() {
     return (
-      <div>
-        <Selector
-          seasons={this.props.seasons}
-          handleLeagueCodeChange={this.handleLeagueCodeChange}
-          handleClick={this.handleClick}
-        >
-        </Selector>
-        {
-          this.props.loading
-          && <div>Loading...</div>
-        }
-        {
+      <Selector
+        handleLeagueCodeChange={this.handleLeagueCodeChange}
+        handleClick={this.handleClick}
+        competitionName={
           this.props.standings
-          && <StandingsContainer />
+            ? this.props.standings.competition.name
+            : null
         }
-      </div>
+      >
+      </Selector>
     )
   }
 }

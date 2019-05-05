@@ -5,9 +5,19 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 
+const styles = {
+  odd: {
+    backgroundColor: '#f2f2f2'
+  },
+  even: {
+    backgroundColor: '#fff'
+  }
+}
+
 const Standings = (props) => {
+  console.log(props);
   return (
-    <div>
+    <section>
       <Table>
         <TableHead>
           <TableRow>
@@ -22,8 +32,14 @@ const Standings = (props) => {
         </TableHead>
         <TableBody>
           {props.dataTable.map(row => (
-            <TableRow key={row.team.id}>
-              <TableCell component="th" scope="row">{row.team.name}</TableCell>
+            <TableRow key={row.team.id} 
+              style={
+                props.dataTable.indexOf(row) % 2 === 0
+                ? styles.odd
+                : styles.even
+              }
+            >
+              <TableCell component="th" scope="row"><b>{row.team.name}</b></TableCell>
               <TableCell align="right">{row.position}</TableCell>
               <TableCell align="right">{row.playedGames}</TableCell>
               <TableCell align="right">{row.won}</TableCell>
@@ -34,8 +50,7 @@ const Standings = (props) => {
           ))}
         </TableBody>
       </Table>
-      
-    </div>
+    </section>
   )
 }
 
