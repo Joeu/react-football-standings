@@ -20,11 +20,6 @@ class SelectorContainer extends Component {
       <Selector
         handleLeagueCodeChange={this.handleLeagueCodeChange}
         handleClick={this.handleClick}
-        competitionName={
-          this.props.payload
-            ? this.props.payload.competition.name
-            : null
-        }
       >
       </Selector>
     )
