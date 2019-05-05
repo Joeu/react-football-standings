@@ -11,6 +11,12 @@ const styles = {
   },
   even: {
     backgroundColor: '#fff'
+  },
+  classification: {
+    color: '#008000'
+  },
+  endZone: {
+    color: '#FF6347'
   }
 }
 
@@ -18,6 +24,15 @@ const StandingsTable = (props) => {
   const getStatus = () => {
     return new Date() < new Date(props.competitionInfo.season.endDate)
       ? "On going" : "Finished"; 
+  }
+
+  const setZone = (rowIndex) => {
+    if (rowIndex < 4) {
+      return styles.classification;
+    }
+    if (rowIndex > props.dataTable.length -5) {
+      return styles.endZone;
+    }
   }
 
   return (
@@ -29,8 +44,8 @@ const StandingsTable = (props) => {
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell>Team</TableCell>
             <TableCell align="right">Position</TableCell>
+            <TableCell>Team</TableCell>
             <TableCell align="right">Games Played</TableCell>
             <TableCell align="right">Won</TableCell>
             <TableCell align="right">Lost</TableCell>
@@ -47,8 +62,12 @@ const StandingsTable = (props) => {
                   : styles.even
               }
             >
-              <TableCell component="th" scope="row"><b>{row.team.name}</b></TableCell>
-              <TableCell align="right">{row.position}</TableCell>
+              <TableCell component="th" scope="row"
+                style={setZone(props.dataTable.indexOf(row))}
+              >
+                <b>{row.position}</b>
+              </TableCell>
+              <TableCell align="left"><b>{row.team.name}</b></TableCell>
               <TableCell align="right">{row.playedGames}</TableCell>
               <TableCell align="right">{row.won}</TableCell>
               <TableCell align="right">{row.lost}</TableCell>
