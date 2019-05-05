@@ -32,12 +32,12 @@ class SelectorContainer extends Component {
 }
 
 const mapStateToProps = state => ({
-  standings: state.competition.competitionReducer.standings,
-  loading: state.competition.competitionReducer.loading
+  standings: state.competitionReducer.standings,
+  loading: state.competitionReducer.loading
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchCompetition: (id, year) => dispatch(fetchCompetition(id, year))
+  fetchCompetition: (id) => dispatch(fetchCompetition(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SelectorContainer);

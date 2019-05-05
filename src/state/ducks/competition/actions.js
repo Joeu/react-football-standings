@@ -1,12 +1,16 @@
 import * as apiService from '../../utils/apiService';
 import * as types from './types';
 
-export const fetchCompetition = (id, year) => {
+export const fetchCompetition = (id) => {
   return async dispatch => {
     dispatch(fetchCompetitionBegin());
     try {
-      const standings = await apiService.fetchCompetition(id, year);
-      return dispatch(fetchCompetitionSuccess(standings));
+      const response = await apiService.fetchCompetition(id);
+      if (response.errorCode) {
+        dispatch(fetchCompetitionError(response));
+      } else {
+        dispatch(fetchCompetitionSuccess(response));
+      }
     } catch(error) {
       dispatch(fetchCompetitionError(error));
     }
@@ -20,10 +24,10 @@ export const fetchCompetitionBegin = () => {
   }
 }
 
-export const fetchCompetitionSuccess = (standings) => {
+export const fetchCompetitionSuccess = (response) => {
   return {
     type: types.FETCH_COMPETITION_SUCCESS,
-    standings,
+    payload: response,
     loading: false
   }
 }
@@ -32,6 +36,6 @@ export const fetchCompetitionError = (error) => {
   return {
     type: types.FETCH_COMPETITION_ERROR,
     loading: false,
-    error
+    payload: error
   }
 }

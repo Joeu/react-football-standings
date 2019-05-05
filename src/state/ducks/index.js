@@ -1,1 +1,1 @@
-export { default as competition } from "./competition";
+export { default as competitionReducer } from "./competition";

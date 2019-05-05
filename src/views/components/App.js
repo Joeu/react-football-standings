@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import '../../App.css';
 import SelectorContainer from './container/SelectorContainer';
-import StandingsContainer from './container/StandingsContainer';
+import Standings from './presentational/Standings';
 
 class App extends Component {
   render() {
@@ -17,8 +17,8 @@ class App extends Component {
             && <div>Loading...</div>
           }
           {
-            this.props.standings
-            && <StandingsContainer />
+            this.props.payload
+            && <Standings payload={this.props.payload} />
           }
         </main>
         <footer>
@@ -30,8 +30,8 @@ class App extends Component {
 }
 
 const mapStateToProps = state => ({
-  standings: state.competition.competitionReducer.standings,
-  loading: state.competition.competitionReducer.loading
+  payload: state.competitionReducer.payload,
+  loading: state.competitionReducer.loading
 });
 
 export default connect(mapStateToProps)(App);

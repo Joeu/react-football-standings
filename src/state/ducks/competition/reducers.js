@@ -1,24 +1,22 @@
-import { combineReducers } from "redux";
 import * as types from './types';
 
 const competitionReducer = (state={}, action) => {
-  let { standings, loading } = action;
+  let { payload, loading } = action;
   switch(action.type) {
     case types.FETCH_COMPETITION_BEGIN:
       return {
-        ...state,
-        standings,
         loading
       }
     case types.FETCH_COMPETITION_SUCCESS:
       return {
         ...state,
-        standings,
+        payload,
         loading
       }
     case types.FETCH_COMPETITION_ERROR:
       return {
         ...state,
+        payload,
         loading
       }
     default:
@@ -26,6 +24,4 @@ const competitionReducer = (state={}, action) => {
   }
 }
 
-export default combineReducers({
-  competitionReducer,
-});
+export default competitionReducer;

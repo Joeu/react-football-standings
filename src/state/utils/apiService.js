@@ -5,7 +5,7 @@ const headers = {
   "Content-Type": "text/plain"
 }
 
-export const fetchCompetition = (id, year) =>
+export const fetchCompetition = (id) =>
   fetch(`${BASE_URL}/competitions/${id}/standings`,
     {
       method: 'GET',
