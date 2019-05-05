@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import '../../App.css';
+import '../styles/App.css';
 import SelectorContainer from './container/SelectorContainer';
 import Standings from './presentational/Standings';
 

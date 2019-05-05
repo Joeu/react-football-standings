@@ -9,6 +9,7 @@ Funcionalidades a serem inseridas:
   - Abas para Classificação e Jogos da Rodada.
   - Placar atualizado nos jogos da rodada.
   - Coluna adicional com resultados dos jogos do time selecionado (ao clicar na linha).
+  - Trabalhar mais no styling.
 
 ##Se usou algum framework javascript, qual foi o motivo de ter usado este? Caso contrário, por que não utilizou nenhum?
 
