@@ -21,8 +21,8 @@ class SelectorContainer extends Component {
         handleLeagueCodeChange={this.handleLeagueCodeChange}
         handleClick={this.handleClick}
         competitionName={
-          this.props.standings
-            ? this.props.standings.competition.name
+          this.props.payload
+            ? this.props.payload.competition.name
             : null
         }
       >
@@ -31,13 +31,9 @@ class SelectorContainer extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  standings: state.competitionReducer.standings,
-  loading: state.competitionReducer.loading
-});
 
 const mapDispatchToProps = dispatch => ({
   fetchCompetition: (id) => dispatch(fetchCompetition(id))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SelectorContainer);
+export default connect(null, mapDispatchToProps)(SelectorContainer);

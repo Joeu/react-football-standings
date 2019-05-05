@@ -9,16 +9,16 @@ class App extends Component {
     return (
       <div>
         <header>
-          <SelectorContainer />
+          <SelectorContainer payload={this.props.payload} loading={this.props.loading} />
         </header>
         <main>
           {
             this.props.loading
-            && <div>Loading...</div>
+              && <div>Loading...</div>
           }
           {
             this.props.payload
-            && <Standings payload={this.props.payload} />
+              && <Standings payload={this.props.payload} />
           }
         </main>
         <footer>

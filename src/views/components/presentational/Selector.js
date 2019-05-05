@@ -20,7 +20,7 @@ const Selector = (props) => {
         </FormControl>
         {
           props.competitionName
-          && <span>{props.competitionName}</span>
+            && <span>{props.competitionName}</span>
         }
     </header>
   )
