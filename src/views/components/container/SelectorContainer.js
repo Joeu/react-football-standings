@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Selector from '../presentational/Selector';
 import { fetchCompetition } from '../../../state/ducks/competition/actions';
-import StandingsContainer from './StandingsContainer';
 
 class SelectorContainer extends Component {
   handleLeagueCodeChange = (event) => {
