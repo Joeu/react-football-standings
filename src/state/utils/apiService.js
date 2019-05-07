@@ -1,7 +1,7 @@
 const BASE_URL = 'http://api.football-data.org/v2';
 
 const headers = {
-  'X-Auth-Token': 'e364a6902a4c4600b9d7b1258927b42d',
+  'X-Auth-Token': '<YOUR API KEY>',
   "Content-Type": "text/plain"
 }
 

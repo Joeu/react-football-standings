@@ -1,7 +1,10 @@
 #Football Standings
 
 A SPA that displays current standings with the squads for the passed league built with React and Redux, with test cases using jest-enzyme.
-This sample app cosumes the [football-data](https://www.football-data.org/) API.
+
+This sample app cosumes the [football-data](https://www.football-data.org/) API. 
+*Make sure to get your own API key*
+
 
 ### Running Code
 
