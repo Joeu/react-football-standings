@@ -1,0 +1,40 @@
+.App {
+  display: flex;
+  text-align: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+  padding-bottom: 20px;
+}
+
+@media (max-width: 950px) {
+  main {
+    justify-content: flex-start;
+    overflow-x: scroll;
+  }
+}
+
+footer {
+  position: fixed;
+  width: 100%;
+  background-color: #efefef;
+  flex: 0 0 50px;/*or just height:50px;*/
+  bottom: 0;
+  margin-top: auto;
+}
+

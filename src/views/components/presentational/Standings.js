@@ -2,9 +2,12 @@ import React from 'react';
 import StandingsTable from './StandingsTable';
 import ErrorHandler from './ErrorHandler';
 
+/**
+ * Displays the table and the competition status
+ * @param {*} props 
+ */
 const Standings = (props) => {
   return (
-    
     <div>
       {
         props.payload.standings

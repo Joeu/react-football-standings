@@ -5,6 +5,9 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 
+/**
+ * CSS-in_JS styles
+ */
 const styles = {
   odd: {
     backgroundColor: '#f2f2f2'
@@ -20,6 +23,10 @@ const styles = {
   }
 }
 
+/**
+ * Displays the table standings, highlightins the squads that are in classification and delegation zones.
+ * @param {*} props 
+ */
 const StandingsTable = (props) => {
   const getStatus = () => {
     return new Date() < new Date(props.competitionInfo.season.endDate)

@@ -3,6 +3,10 @@ import FormControl from '@material-ui/core/FormControl';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
+/**
+ * Component that renders the input field for competition code
+ * @param {*} props 
+ */
 const Selector = (props) => {
   return (
     <FormControl>
@@ -15,7 +19,7 @@ const Selector = (props) => {
       />
       <Button variant="contained" color="primary" onClick={props.handleClick}>
         Standings
-          </Button>
+      </Button>
     </FormControl>
   )
 }

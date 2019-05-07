@@ -3,6 +3,9 @@ import { connect } from 'react-redux';
 import Selector from '../presentational/Selector';
 import { fetchCompetition } from '../../../state/ducks/competition/actions';
 
+/**
+ * Handles the input state and fetchs for competition with the code passed by the user
+ */
 class SelectorContainer extends Component {
   handleLeagueCodeChange = (event) => {
     let _code = event.target.value;
@@ -25,7 +28,6 @@ class SelectorContainer extends Component {
     )
   }
 }
-
 
 const mapDispatchToProps = dispatch => ({
   fetchCompetition: (id) => dispatch(fetchCompetition(id))
